@@ -27,32 +27,74 @@
                 <div class="toolbar p-2 d-flex align-items-center justify-content-between ">
                     <div class="avatar">
                         <div class="">
-                            <img class="rounded-circle img-fluid " src="./img/avatar_io.jpg" alt="">
-                            <span class="ps-1">utente</span>
+                            <img class="rounded-circle img-fluid " src="img/avatar_io.jpg" alt="">
+                            <span class="ps-1">user</span>
                         </div>
                     </div>
                     <div class="icons d-flex gap-4 pe-3 ">
-                        <i class="fa-solid fa-circle-notch"></i>
-                        <i class="fa-solid fa-message"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
+                        <a href="#"><i class="fa-solid fa-message"></i></a>
+                        <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                     </div>
                 </div>
-                <div class="notification">
-                    notifiche
+                <div class="notification px-3 d-flex gap-2 align-items-center ">
+                    <div class="bell d-flex align-items-center justify-content-center ">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div class="d-flex flex-column g-0 ">
+                        <span>Ricevi notifiche di nuovi messaggi</span>
+                        <a href="#">Attiva notifiche desktop</a>
+                    </div>
                 </div>
-                <div class="searchbar">
-                    imput
+                <div class="searchbar p-2 ">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                        <input type="text" class="form-control " placeholder="Cerca o inizia una nuova chat">
+                      </div>
                 </div>
-                <div class="user-contacts">
-                 
-                </div>
+
+
+                <!-- <div class="user-contacts" >
+                    <div class="user-contact d-flex justify-content-between " v-for="(contact, id) in contacts" :key="id">
+                        <div class="d-flex   ">
+                            <div class="avatar">
+                                <img class="rounded-circle img-fluid" :src="'img/' + contact.avatar" :alt="contact.name">
+                            </div>
+                            <div class="specifics px-3">
+                                <div>{{contact.name}}</div>
+                                <div>Ultimo messaggio invato</div>
+                            </div>
+                        </div>
+                        <div class="hour">12:00</div>
+                    </div>
+                </div> -->
+
+
             </div>
             <div class="" id="messages">
                 <div class="toolbar">
-                    messages
+                    <div class="user-contact d-flex justify-content-between align-items-center  ">
+                        <div class="d-flex   ">
+                            <div class="avatar">
+                                <img class="rounded-circle img-fluid" src="img/avatar_1.jpg"  alt="contact.name">
+                            </div>
+                            <div class="specifics px-3">
+                                <div>Michele</div>
+                                <div>Ultimo accesso oggi alle 12:00</div>
+                            </div>
+                        </div> 
+                        <div class="icons d-flex gap-4 pe-3 ">
+                            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                            <a href="#"><i class="fa-solid fa-paperclip"></i></a>
+                            <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                            
+                        </div>
+                    </div>
                 </div>
                 <div class="chat">
-     
+                    
                 </div>
                 <div class="toolbar">
                     imput

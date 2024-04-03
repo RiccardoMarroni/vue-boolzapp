@@ -3,19 +3,19 @@ import {contacts} from './data.js';
 const {createApp} = Vue;
 
 createApp({
-    data(){
-        return{
+    data() {
+        return {
             contacts: contacts,
-            activeContactId: 1
+            activeId: 1
         }
     },
-    methods:{
-
+    methods: {
+            
     },
-    computed:{
-
+    computed: {
+        
     },
-    mounted(){
-        console.log(this.contacts);
+    mounted() {
+        
     }
 }).mount('#app');
