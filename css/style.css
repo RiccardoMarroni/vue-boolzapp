@@ -1,0 +1,62 @@
+:root{
+    --mr-bg-primary: #009688;
+    --mr-bg-secondary: #DADBD3;
+}
+
+  .mr-debug{
+    border: 1px solid red;
+}  
+
+/* MAIN */
+
+body{
+    font-family: 'roboto', 'sans-serif';
+    background: linear-gradient(180deg, var(--mr-bg-primary) 20%, var(--mr-bg-secondary) 20%);
+}
+
+#app {
+    height: 100vh;
+    width: 100%; 
+}
+
+
+.main-square{
+    background-color: white;
+    width: 100%;
+    height: 90%;
+    
+}
+
+.column{
+    height: calc(100vh - 42px);
+    overflow-y: auto;
+}
+
+.info-bar{
+    height: 50px;
+    background-color: rgb(216, 214, 214);
+}
+
+.no-padding{
+    padding: 0!important
+}
+
+.notification{
+    height: 70px;
+    background-color: lightblue;
+}
+
+.searchbar{
+    height: 50px;
+    
+}
+
+.contacts{
+    height: calc(100% - 170px);
+    
+    
+}
+
+.contacts img{
+ width: 40px;
+}
