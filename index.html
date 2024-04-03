@@ -16,7 +16,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script  src="./js-script/script.js" type="module"></script>
+    <script  src="javascript/script.js" type="module"></script>
     <title>Boolzapp</title>
 </head>
 
@@ -56,11 +56,11 @@
                 </div>
 
 
-                <!-- <div class="user-contacts" >
+                <div class="user-contacts" >
                     <div class="user-contact d-flex justify-content-between " v-for="(contact, id) in contacts" :key="id">
                         <div class="d-flex   ">
                             <div class="avatar">
-                                <img class="rounded-circle img-fluid" :src="'img/' + contact.avatar" :alt="contact.name">
+                                <img class="rounded-circle img-fluid" :src="'' + contact.avatar" :alt="contact.name">
                             </div>
                             <div class="specifics px-3">
                                 <div>{{contact.name}}</div>
@@ -69,7 +69,7 @@
                         </div>
                         <div class="hour">12:00</div>
                     </div>
-                </div> -->
+                </div>
 
 
             </div>
@@ -96,8 +96,10 @@
                 <div class="chat">
                     
                 </div>
-                <div class="toolbar">
-                    imput
+                <div class="toolbar-message d-flex">
+                    <i class="fa-regular fa-face-smile font-chatbar"></i>
+                    <input type="text" class="form-control chatbar " placeholder="scrivi un messaggio ">
+                    <i class="fa-solid fa-microphone  font-chatbar"></i>
                 </div>
             </div>
         </div>

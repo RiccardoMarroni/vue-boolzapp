@@ -47,6 +47,11 @@ body {
     background-color: var(--mr-bg-toolbar);
 }
 
+.toolbar-message{
+    color: var(--mr-fontawesome-color);
+    background-color: var(--mr-bg-toolbar);
+    margin-top: 33px;
+}
 .bell {
     border: 1px solid var(--mr-white);
     background-color: var(--mr-white);
@@ -108,6 +113,18 @@ body {
 .hour {
     color: var(--mr-graytext);
     font-size: 0.9rem;
+}
+
+.chatbar{
+    background-color: white;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.font-chatbar{
+    margin: auto;
 }
 /* MESSAGES */
 
