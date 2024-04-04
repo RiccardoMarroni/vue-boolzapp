@@ -21,13 +21,13 @@
 </head>
 
 <body>
-    <div class="p-4" id="app">
+    <div class="py-4" id="app">
         <div class="container h-100 p-0 bg-white d-flex">
             <div class="" id="contacts">
                 <div class="toolbar p-2 d-flex align-items-center justify-content-between ">
                     <div class="avatar">
                         <div class="">
-                            <img class="rounded-circle img-fluid " src="img/avatar_io.jpg" alt="">
+                            <img class="rounded-circle img-fluid " src="./img/avatar_io.jpg" alt="">
                             <span class="ps-1">user</span>
                         </div>
                     </div>
@@ -56,14 +56,14 @@
                 </div>
 
 
-                <div class="user-contacts" >
-                    <div class="user-contact d-flex justify-content-between " v-for="(contact, id) in contacts" :key="id">
+                <div class="user-contacts"  >
+                    <div class="user-contact d-flex justify-content-between " v-for="(contact, id) in contacts" :key="id"   @click="activeContactId = contact.id" >
                         <div class="d-flex   ">
                             <div class="avatar">
                                 <img class="rounded-circle img-fluid" :src="'' + contact.avatar" :alt="contact.name">
                             </div>
                             <div class="specifics px-3">
-                                <div>{{contact.name}}</div>
+                                <div>{{ contact.name }}</div>
                                 <div>Ultimo messaggio invato</div>
                             </div>
                         </div>
@@ -75,13 +75,13 @@
             </div>
             <div class="" id="messages">
                 <div class="toolbar">
-                    <div class="user-contact d-flex justify-content-between align-items-center  ">
-                        <div class="d-flex   ">
-                            <div class="avatar">
-                                <img class="rounded-circle img-fluid" src="img/avatar_1.jpg"  alt="contact.name">
+                    <div class="user-contact d-flex justify-content-between align-items-center">
+                        <div class="d-flex">
+                            <div class="avatar" >
+                                <img class="rounded-circle img-fluid" :src="'' + activeContact.avatar"  :alt="activeContact.name">
                             </div>
                             <div class="specifics px-3">
-                                <div>Michele</div>
+                                <div>{{ activeContact.name }}</div>
                                 <div>Ultimo accesso oggi alle 12:00</div>
                             </div>
                         </div> 
@@ -93,13 +93,22 @@
                         </div>
                     </div>
                 </div>
+
+
                 <div class="chat">
-                    
+                    <div class="row-msg py-1" v-for="(message, index) in changeAvatar" :key="index">
+                        <div class="msg d-flex justify-content-between" :class="classMsg(message)">
+                            <div class="p-3">{{ message.message }}</div>
+                            <div class="hour align-self-end  px-2 ">{{ findTheHour(message.date) }}</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="toolbar-message d-flex">
-                    <i class="fa-regular fa-face-smile font-chatbar"></i>
-                    <input type="text" class="form-control chatbar " placeholder="scrivi un messaggio ">
-                    <i class="fa-solid fa-microphone  font-chatbar"></i>
+
+
+                <div class="toolbar d-flex gap-4  align-items-center px-4">
+                    <a href="#"><i class="fa-regular fa-face-smile icons"></i></a>
+                    <input class="form-control" type="text" placeholder="Scrivi un messaggio" v-model="newMsg" @keyup.enter="sendMsg">
+                    <a href="#"><i class="fa-solid fa-microphone icons"></i></a>
                 </div>
             </div>
         </div>

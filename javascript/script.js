@@ -6,14 +6,44 @@ createApp({
     data() {
         return {
             contacts: contacts,
-            activeId: 1
+            activeContactId: 1,
+            newMsg: ''
         }
     },
     methods: {
-            
+        classMsg(msg) {
+            if (msg.status === 'sent') {
+                return 'sent';
+            } else {
+                return 'received';
+            }
+        },
+        sendMsg() {
+            if (!this.newMsg.trim()) return;
+            const contact = this.contacts.find((contact) => contact.id === this.activeContactId);
+            if (contact) {
+                contact.messages.push({
+                    date:  new Date().toISOString(),
+                    message: this.newMsg,
+                    status: 'sent'
+                });
+                this.newMsg = '';
+            }
+        },
+        findTheHour(dateString) {
+            let hourExact = dateString.split(' ');
+            return hourExact[1]; 
+          },
     },
     computed: {
-        
+        changeAvatar() {
+            const contact = this.contacts.find((contact) => contact.id === this.activeContactId);
+            return contact.messages;
+        },
+        activeContact() {
+            const contact = this.contacts.find(contact => contact.id === this.activeContactId);
+            return contact;
+        }
     },
     mounted() {
         
