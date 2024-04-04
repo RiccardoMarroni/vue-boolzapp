@@ -13,7 +13,7 @@
 }
 
 body {
-    /* font-family: "Roboto", sans-serif; */
+     font-family: "Roboto", sans-serif; 
     font-weight: 500;
     font-style: normal;
 }
@@ -24,9 +24,9 @@ body {
     font-size: 0.8rem;
 }
 
-.mr-debug {
+/* .mr-debug {
     border: 1px solid red;
-}
+} */
 
 #app {
     width: 100%;
@@ -120,6 +120,8 @@ body {
 .user-contacts :hover {
     background-color: var(--mr-bg-toolbar);
 }
+
+
 
 /* MESSAGES */
 #messages {
