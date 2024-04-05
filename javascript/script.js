@@ -1,4 +1,5 @@
 import {contacts} from './data.js';
+import Picker from './emoji-picker.js';
 
 const dt = luxon.DateTime;
 
@@ -44,6 +45,21 @@ createApp({
             let hourExact = dateString.split(' ');
             return hourExact[1]; 
           },
+         onSelectEmoji(emoji) {
+            console.log(emoji)
+            this.messageText += emoji.i;
+            /*
+              // result
+              { 
+                  i: "😚", 
+                  n: ["kissing face"], 
+                  r: "1f61a", // with skin tone
+                  t: "neutral", // skin tone
+                  u: "1f61a" // without tone
+              }
+              */
+        },
+
     },
     computed: {
         changeAvatar() {
@@ -62,3 +78,9 @@ createApp({
         
     }
 }).mount('#app');
+
+
+
+createApp({
+
+}).component('Picker', Picker).mount('#app');
